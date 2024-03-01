@@ -19,7 +19,7 @@ const Select = styled.select`
 
 const useSelectMonedas = (
     label,
-    monedas
+    opciones
     ) => {
 
     const [state, setState] = useState('');
@@ -27,18 +27,19 @@ const useSelectMonedas = (
     const SelectMonedas = () =>( 
         <>
             <Label>{label}</Label>
+
             <Select
                 value={state}
                 onChange={e => setState(e.target.value)}
             >
                 <option value="">Seleccione</option>
                 {
-                    monedas.map( moneda =>(
+                    opciones.map( opcion =>(
                         <option
-                         key={moneda.id}
-                         value={moneda.id}
+                         key={opcion.id}
+                         value={opcion.id}
                         >
-                        {moneda.nombre}
+                        {opcion.nombre}
                         </option>
                     ))
                 }
